@@ -2,7 +2,7 @@
 
 Data Transfer Objects (DTOs) is an object-oriented design pattern for encapsulating data in a layer that handles input / output concerns such as serialization and validation.
 
-In the context of Django Ninja, DTOs can be implemented as pydantic models, which Ninja uses via type hinting to perform automatic serialization, deserialization, and validation. A service layer then enables these DTOs to be read from and written to the backend.
+In [Django Ninja](https://django-ninja.dev/), DTOs can be implemented as [pydantic](https://docs.pydantic.dev/latest/) models, which Ninja uses via type hinting to perform automatic serialization, deserialization, and validation. A service layer then enables these DTOs to be read from and written to the backend.
 
 The example exposes a CRUD API for a simple model called `Widget`, showing how DTOs, services, and views can be composed.
 
