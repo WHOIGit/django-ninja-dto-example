@@ -18,7 +18,7 @@ def secret(request):
     return {'message': 'a super secret message... welcome, authenticated user.'}
 
 
-@api.post('/widget', response=WidgetOutput, auth=authenticator)
+@api.post('/widget', response=WidgetOutput)
 def create_widget(request, input: WidgetInput):
     return WidgetService.create(input)
 
@@ -28,7 +28,7 @@ def read_widget(request, id: int):
     return WidgetService.read(id)
 
 
-@api.put('/widget/{id}', auth=authenticator)
+@api.put('/widget/{id}')
 def update_widget(request, id: int, input: WidgetInput):
     WidgetService.update(id, input)
     return 204
