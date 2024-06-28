@@ -1,6 +1,6 @@
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.exceptions import AuthenticationFailed
-
+from ninja.errors import HttpError
 
 class TokenAuthenticator:
     def __init__(self):
@@ -12,5 +12,5 @@ class TokenAuthenticator:
             if user is None:
                 raise AuthenticationFailed('Invalid token, authentication failed')
             return user
-        except AuthenticationFailed as e:
-            raise e
+        except AuthenticationFailed:
+            raise HttpError(403, 'Invalid token, authentication failed')
