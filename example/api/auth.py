@@ -10,7 +10,7 @@ class TokenAuthenticator:
         try:
             user = self.auth.authenticate(request)
             if user is None:
-                raise AuthenticationFailed('Invalid token, authentication failed')
+                raise AuthenticationFailed('Unauthorized')
             return user
         except AuthenticationFailed:
-            raise HttpError(403, 'Invalid token, authentication failed')
+            raise HttpError(401, 'Unauthorized')
