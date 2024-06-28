@@ -40,3 +40,17 @@ Here's the validation error detail you'll receive when POSTing `bad-create-widge
     ]
 }
 ```
+## Using the client
+
+1. Install requirements:
+   ```
+   pip install -r client-requirements.txt
+   ```
+1. Acquire an authentication token using Django admin.
+1. Copy `dotenv.template` to `.env` and replace the example token with your real token
+1. Run the client:
+   ```
+   python client.py
+   ```
+
+The client exercises all endpoints and shows status codes and outputs for each one.
