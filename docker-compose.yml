@@ -1,7 +1,6 @@
 services:
   yeti-fargate-basic:
-    image: 360509112437.dkr.ecr.us-east-1.amazonaws.com/yeti-fargate-basic:latest
-    container_name: yeti-fargate-basic
+    image: 360509112437.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_NAME}:latest
     env_file:
       - .env
     ports:
